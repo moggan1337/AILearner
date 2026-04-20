@@ -1282,3 +1282,222 @@ MIT License - see [LICENSE](LICENSE) for details.
 <p align="center">
   Built with ❤️ by <a href="https://github.com/moggan1337">moggan1337</a>
 </p>
+
+---
+
+## 🎓 Advanced Topics
+
+### Custom Learning Paths
+
+```python
+from ailearner import LearningPath, Course
+
+# Create a custom learning path
+path = LearningPath(
+    name="Full Stack ML Engineer",
+    courses=[
+        Course("python-basics", level="beginner"),
+        Course("data-science-fundamentals", level="intermediate"),
+        Course("ml-with-scikit-learn", level="intermediate"),
+        Course("deep-learning-pytorch", level="advanced"),
+        Course("mlops-production", level="advanced"),
+    ],
+    estimated_hours=120,
+)
+
+# Generate personalized study plan
+plan = path.generate_plan(
+    available_hours_per_week=10,
+    target_completion_date=datetime(2024, 12, 31),
+)
+
+for week, tasks in plan.items():
+    print(f"Week {week}: {len(tasks)} tasks")
+```
+
+### Integration with Jupyter
+
+```python
+from ailearner.integrations import JupyterNotebook
+
+# Create interactive notebook
+notebook = JupyterNotebook("ml-intro.ipynb")
+notebook.add_markdown("# Machine Learning Introduction")
+notebook.add_code("import numpy as np", "import libraries")
+notebook.add_exercise(
+    title="NumPy Basics",
+    description="Create a 3x3 matrix with random values",
+    solution="matrix = np.random.rand(3, 3)",
+    hints=["Use np.random.rand()", "Check the shape"],
+)
+notebook.save()
+```
+
+### Custom Assessments
+
+```python
+from ailearner.assessment import Quiz, Question, Assessment
+
+quiz = Quiz(
+    title="Neural Networks Quiz",
+    questions=[
+        Question(
+            text="What is the purpose of an activation function?",
+            options=[
+                "To initialize weights",
+                "To introduce non-linearity",  # Correct
+                "To normalize input data",
+                "To reduce overfitting",
+            ],
+            explanation="Activation functions introduce non-linearity, allowing neural networks to learn complex patterns.",
+        ),
+        Question(
+            text="Which optimizer is best for sparse gradients?",
+            options=[
+                "SGD",
+                "Adam",
+                "RMSprop",
+                "Adagrad",  # Correct
+            ],
+            explanation="Adagrad adapts learning rates based on parameter frequency, making it effective for sparse data.",
+        ),
+    ],
+    passing_score=0.7,
+    time_limit_minutes=15,
+)
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### Installation Issues
+
+**Problem**: Module not found errors
+
+**Solution**: Ensure all dependencies are installed
+
+```bash
+pip install -r requirements.txt
+# or
+pip install ailearner[all]  # Install with all optional dependencies
+```
+
+### Jupyter Integration Issues
+
+**Problem**: Notebook rendering problems
+
+**Solution**: Install Jupyter correctly
+
+```bash
+pip install jupyter notebook
+jupyter nbextension install --user ailearner
+jupyter nbextension enable ailearner
+```
+
+### Assessment Issues
+
+**Problem**: Quiz results not saving
+
+**Solution**: Check database connection
+
+```python
+from ailearner import configure
+
+configure(
+    database_url="postgresql://user:pass@localhost/ailearner",
+    save_results=True,
+)
+```
+
+---
+
+## 📊 Metrics and Analytics
+
+### Track Progress
+
+```python
+from ailearner.analytics import ProgressTracker
+
+tracker = ProgressTracker(user_id="user123")
+
+# Get overall progress
+progress = tracker.get_progress()
+print(f"Completed: {progress.completed_courses}")
+print(f"Total Hours: {progress.total_hours}")
+print(f"Success Rate: {progress.success_rate:.1%}")
+
+# Get detailed metrics
+metrics = tracker.get_detailed_metrics()
+for course, score in metrics.items():
+    print(f"{course}: {score:.1%}")
+```
+
+### Generate Reports
+
+```python
+from ailearner.analytics import ReportGenerator
+
+generator = ReportGenerator(framework="pandas")
+report = generator.generate_progress_report(
+    user_id="user123",
+    format="html",
+    include_certificates=True,
+)
+report.save("progress_report.html")
+```
+
+---
+
+## 🌍 Community and Support
+
+### Join the Community
+
+- **Discord**: Join our Discord server for real-time help
+- **GitHub Discussions**: Ask questions and share ideas
+- **Stack Overflow**: Tag questions with `ailearner`
+
+### Contributing
+
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+---
+
+## 📈 Roadmap
+
+### Planned Features
+
+- [ ] Mobile app (React Native)
+- [ ] VR/AR learning environments
+- [ ] AI-powered personalized tutoring
+- [ ] Corporate team learning dashboards
+- [ ] Integration with LinkedIn Learning
+- [ ] Blockchain-verified certificates
+
+### Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 2.0.0 | 2024-01 | Major redesign, new assessment engine |
+| 1.5.0 | 2023-08 | Added Jupyter integration |
+| 1.0.0 | 2023-01 | Initial release |
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+- The NumPy and Pandas teams for data science foundations
+- PyTorch and TensorFlow for deep learning frameworks
+- The Jupyter community for interactive computing
+- All contributors who have helped improve AILearner
+
+---
+
+**Happy Learning! 🚀**
