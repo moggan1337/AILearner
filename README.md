@@ -1,599 +1,1284 @@
-# AILearner 🧠
+# AILearner - Interactive AI Learning Platform
 
-> Machine Learning from Scratch in JavaScript/TypeScript
+<p align="center">
+  <img src="assets/logo.png" alt="AILearner Logo" width="200"/>
+</p>
 
-[![npm version](https://img.shields.io/npm/v/ailearner.svg)](https://www.npmjs.com/package/ailearner)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-green.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/danielaideborn/AILearner/pulls)
-[![Maintenance](https://img.shields.io/badge/Maintenance-active-success.svg)](#)
-
-**AILearner** is a lightweight machine learning library implemented entirely from scratch using only native JavaScript and TypeScript. No external ML dependencies required — perfect for learning, experimentation, and embedding into projects where you need basic ML capabilities without the bloat.
-
-## Table of Contents
-
-- [Features](#-features)
-- [Why AILearner?](#-why-ailearner)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [API Reference](#-api-reference)
-- [Architecture](#-architecture)
-- [Contributing](#-contributing)
-- [License](#-license)
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#api-reference">API</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#troubleshooting">Troubleshooting</a>
+</p>
 
 ---
 
-## 🎯 Features
+## 🎯 Overview
 
-### Core Algorithms
+AILearner is a comprehensive, interactive platform designed to master Artificial Intelligence concepts through hands-on tutorials, coding exercises, and adaptive quizzes. Whether you're a beginner exploring machine learning fundamentals or an advanced practitioner diving into transformer architectures, AILearner provides a structured learning path with real-time feedback and progress tracking.
 
-| Algorithm | Type | Description |
-|-----------|------|-------------|
-| **Neural Network** | Deep Learning | Multi-layer perceptron with customizable architecture |
-| **Linear Regression** | Supervised Learning | Predict continuous values using linear relationships |
-| **Logistic Regression** | Supervised Learning | Binary classification with probability outputs |
+### Key Highlights
 
-### Key Capabilities
-
-- **🔢 Matrix Operations** — Full support for matrix multiplication, transposition, and element-wise operations
-- **📉 Gradient Descent** — Optimized implementation for efficient weight updates
-- **⚡ Activation Functions** — Sigmoid, ReLU, Tanh, and Softmax implementations
-- **🔄 Backpropagation** — Complete gradient computation for neural network training
-- **📊 Loss Functions** — MSE, Cross-Entropy, and custom loss support
-- **🎛️ Hyperparameters** — Configurable learning rate, epochs, and regularization
-
-### Technical Highlights
-
-- **Zero Dependencies** — Pure JavaScript/TypeScript, no external ML libraries
-- **TypeScript Support** — Full type definitions included
-- **ES Modules** — Modern ES2022 module system
-- **Tree Shakeable** — Import only what you need
-- **Browser Compatible** — Works in Node.js and browsers
+- **Multi-Domain Coverage**: Machine Learning, Deep Learning, Natural Language Processing, and Computer Vision
+- **Interactive Learning**: Code-along exercises with automatic grading
+- **Adaptive Quizzes**: AI-powered difficulty adjustment based on performance
+- **Progress Analytics**: Detailed insights into learning patterns and mastery levels
+- **Modular Architecture**: Easy extensibility for new courses and topics
+- **Offline Support**: Download courses for learning without internet connectivity
 
 ---
 
-## 💡 Why AILearner?
+## ✨ Features
 
-### Educational Value
+### 1. Interactive Tutorials
 
-Machine learning libraries like TensorFlow and PyTorch are powerful but opaque. AILearner demystifies ML by implementing every algorithm from first principles:
+Structured lessons with:
+- **Theory Segments**: Concise explanations with visualizations
+- **Code Examples**: Runnable Python/Julia snippets
+- **Interactive Notebooks**: Jupyter-style inline execution
+- **Key Takeaways**: Summary points for quick revision
 
+### 2. Hands-On Exercises
+
+Practice problems featuring:
+- **Guided Coding**: Step-by-step implementation challenges
+- **Automated Testing**: Instant feedback on submissions
+- **Hint System**: Progressive hints to prevent frustration
+- **Solution Review**: Compare with expert implementations
+
+### 3. Adaptive Quizzes
+
+Intelligent assessment system:
+- **Concept Validation**: Test understanding at multiple levels
+- **Difficulty Scaling**: Questions adjust based on performance
+- **Spaced Repetition**: Optimal timing for review sessions
+- **Detailed Explanations**: Every answer includes rationale
+
+### 4. Progress Tracking
+
+Comprehensive analytics:
+- **Course Completion**: Visual progress indicators
+- **Skill Assessment**: Radar charts for competency mapping
+- **Time Analytics**: Learning time distribution
+- **Streak System**: Gamified daily engagement
+- **Achievement Badges**: Milestone celebrations
+
+### 5. Topic Coverage
+
+#### Machine Learning (ML)
 ```
-Input → [Operations] → Output
-        ↓
-   You Can Read & Understand Every Line
-```
-
-### Use Cases
-
-- **Learning ML fundamentals** — See exactly how algorithms work
-- **Prototyping** — Quick experiments without framework overhead
-- **Embedded systems** — Lightweight ML for resource-constrained environments
-- **Interview preparation** — Implement algorithms to understand them deeply
-- **Teaching** — Use in courses on machine learning fundamentals
-
-### Comparison
-
-| Feature | AILearner | TensorFlow | PyTorch |
-|---------|-----------|------------|---------|
-| Bundle Size | ~5KB | ~500MB | ~400MB |
-| Dependencies | 0 | 50+ | 40+ |
-| Learning Curve | Low | High | High |
-| Customization | Full | Complex | Complex |
-| Educational | ✅ Excellent | ❌ Opaque | ❌ Opaque |
-
----
-
-## 📦 Installation
-
-### Via npm
-
-```bash
-npm install ailearner
-```
-
-### Via yarn
-
-```bash
-yarn add ailearner
-```
-
-### Via pnpm
-
-```bash
-pnpm add ailearner
-```
-
-### CDN (Browser)
-
-```html
-<script type="module">
-  import { NeuralNetwork } from 'https://cdn.jsdelivr.net/npm/ailearner/dist/index.js';
-</script>
-```
-
-### From Source
-
-```bash
-git clone https://github.com/danielaideborn/AILearner.git
-cd AILearner
-npm install
-npm run build
+├── Supervised Learning
+│   ├── Linear Regression
+│   ├── Logistic Regression
+│   ├── Decision Trees
+│   ├── Random Forests
+│   ├── Gradient Boosting (XGBoost, LightGBM)
+│   └── Support Vector Machines
+├── Unsupervised Learning
+│   ├── K-Means Clustering
+│   ├── Hierarchical Clustering
+│   ├── PCA & Dimensionality Reduction
+│   └── Association Rules
+├── Reinforcement Learning
+│   ├── Markov Decision Processes
+│   ├── Q-Learning
+│   └── Policy Gradient Methods
+└── Evaluation & Validation
+    ├── Cross-Validation Strategies
+    ├── Metrics & Scoring
+    └── Hyperparameter Tuning
 ```
 
----
-
-## 🚀 Quick Start
-
-### Neural Network Example
-
-Build a neural network to learn the XOR problem:
-
-```typescript
-import { NeuralNetwork } from 'ailearner';
-
-// Define architecture: 2 inputs → 4 hidden → 1 output
-const nn = new NeuralNetwork([2, 4, 1]);
-
-// XOR training data
-const trainingData = [
-  { input: [0, 0], output: [0] },
-  { input: [0, 1], output: [1] },
-  { input: [1, 0], output: [1] },
-  { input: [1, 1], output: [0] },
-];
-
-// Train the network
-nn.train(trainingData, {
-  epochs: 10000,
-  learningRate: 0.1,
-  verbose: true,
-});
-
-// Test predictions
-console.log(nn.forward([0, 0])); // → [0.02] (close to 0)
-console.log(nn.forward([0, 1])); // → [0.98] (close to 1)
-console.log(nn.forward([1, 0])); // → [0.97] (close to 1)
-console.log(nn.forward([1, 1])); // → [0.01] (close to 0)
+#### Deep Learning (DL)
+```
+├── Neural Network Fundamentals
+│   ├── Perceptrons & Activation Functions
+│   ├── Backpropagation
+│   └── Optimization Algorithms
+├── Convolutional Neural Networks
+│   ├── CNN Architectures (LeNet, AlexNet, VGG)
+│   ├── ResNet & Skip Connections
+│   └── Object Detection (YOLO, SSD)
+├── Recurrent Neural Networks
+│   ├── LSTM & GRU
+│   ├── Sequence-to-Sequence
+│   └── Attention Mechanisms
+├── Transformers & BERT
+│   ├── Self-Attention
+│   ├── BERT & GPT Architectures
+│   └── Fine-tuning Strategies
+└── Generative Models
+    ├── Autoencoders
+    ├── VAEs
+    └── GANs
 ```
 
-### Linear Regression Example
-
-Predict house prices based on square footage:
-
-```typescript
-import { LinearRegression } from 'ailearner';
-
-// Training data: [square footage] → [price in $1000s]
-const X = [500, 750, 1000, 1250, 1500, 1750, 2000];
-const y = [100, 150, 200, 250, 300, 350, 400];
-
-const model = new LinearRegression();
-model.fit(X, y);
-
-// Predict price for 1200 sq ft house
-const prediction = model.predict(1200);
-console.log(`Predicted price: $${(prediction * 1000).toFixed(0)}`);
-// → Predicted price: $240,000
+#### Natural Language Processing (NLP)
+```
+├── Text Preprocessing
+│   ├── Tokenization & Stemming
+│   ├── Named Entity Recognition
+│   └── Word Embeddings (Word2Vec, GloVe)
+├── Text Classification
+│   ├── Sentiment Analysis
+│   ├── Topic Modeling (LDA)
+│   └── Text Categorization
+├── Sequence Models
+│   ├── NMT & Seq2Seq
+│   ├── Transformer Architecture
+│   └── Large Language Models
+├── Practical Applications
+│   ├── Chatbots & Dialogue Systems
+│   ├── Information Extraction
+│   └── Text Summarization
+└── Evaluation Metrics
+    ├── BLEU, ROUGE, METEOR
+    └── Perplexity & FID
 ```
 
-### Logistic Regression Example
-
-Classify emails as spam (1) or not spam (0):
-
-```typescript
-import { LogisticRegression } from 'ailearner';
-
-// Features: [wordCount, links, capsRatio]
-const X = [
-  [150, 5, 0.3],   // Normal email
-  [500, 20, 0.7],  // Spam
-  [200, 2, 0.1],   // Normal email
-  [800, 50, 0.9],  // Spam
-];
-
-const y = [0, 1, 0, 1]; // Labels
-
-const classifier = new LogisticRegression();
-classifier.fit(X, y, {
-  learningRate: 0.01,
-  epochs: 1000,
-});
-
-// Predict new email
-const newEmail = [300, 8, 0.4];
-const [prediction, probability] = classifier.predict(newEmail);
-
-console.log(`Is spam: ${prediction === 1 ? 'YES' : 'NO'}`);
-console.log(`Confidence: ${(probability * 100).toFixed(1)}%`);
+#### Computer Vision (CV)
 ```
-
----
-
-## 📚 API Reference
-
-### NeuralNetwork
-
-A multi-layer perceptron for learning complex patterns.
-
-#### Constructor
-
-```typescript
-new NeuralNetwork(layers: number[], options?: NeuralNetworkOptions)
-```
-
-**Parameters:**
-
-| Parameter | Type | Description | Default |
-|-----------|------|-------------|---------|
-| `layers` | `number[]` | Array specifying layer sizes `[input, hidden1, ..., output]` | Required |
-| `options.learningRate` | `number` | Step size for gradient descent | `0.01` |
-| `options.activation` | `'sigmoid' \| 'relu' \| 'tanh'` | Hidden layer activation | `'sigmoid'` |
-| `options.outputActivation` | `'sigmoid' \| 'softmax' \| 'linear'` | Output layer activation | `'sigmoid'` |
-
-**Example:**
-
-```typescript
-// 4-layer network: 10 inputs → 64 hidden → 32 hidden → 3 outputs
-const nn = new NeuralNetwork([10, 64, 32, 3], {
-  learningRate: 0.05,
-  activation: 'relu',
-  outputActivation: 'softmax',
-});
-```
-
-#### Methods
-
-##### `forward(input: number[]): number[]`
-
-Pass inputs through the network to get predictions.
-
-```typescript
-const output = nn.forward([1.0, 0.5, 0.8]);
-// → [0.85, 0.12, 0.03]
-```
-
-##### `train(data: TrainingExample[], config?: TrainConfig): TrainResult`
-
-Train the network on labeled data.
-
-```typescript
-interface TrainingExample {
-  input: number[];
-  output: number[];
-}
-
-interface TrainConfig {
-  epochs?: number;        // Training iterations (default: 1000)
-  learningRate?: number;  // Override constructor rate
-  batchSize?: number;     // Mini-batch size (default: all data)
-  verbose?: boolean;      // Log progress (default: false)
-  earlyStop?: boolean;    // Stop on plateau (default: false)
-}
-
-const result = nn.train(trainingData, {
-  epochs: 5000,
-  learningRate: 0.1,
-  batchSize: 32,
-  verbose: true,
-});
-
-console.log(result.loss);      // Final loss value
-console.log(result.epochs);    // Epochs completed
-console.log(result.duration);  // Training time in ms
-```
-
-##### `predict(input: number[]): PredictionResult`
-
-Get prediction with metadata.
-
-```typescript
-const { output, probabilities, confidence } = nn.predict([1.0, 0.5]);
-// → {
-//     output: [0.85, 0.12, 0.03],
-//     probabilities: [0.85, 0.12, 0.03],
-//     confidence: 0.85,
-//     predictedClass: 0
-//   }
-```
-
-##### `save(): SerializedModel`
-
-Export model weights for persistence.
-
-```typescript
-const weights = nn.save();
-// → { layers: [2, 4, 1], weights: [...], biases: [...] }
-localStorage.setItem('model', JSON.stringify(weights));
-```
-
-##### `static load(config: SerializedModel): NeuralNetwork`
-
-Load a saved model.
-
-```typescript
-const saved = JSON.parse(localStorage.getItem('model'));
-const nn = NeuralNetwork.load(saved);
-```
-
----
-
-### LinearRegression
-
-Predict continuous values using linear relationships.
-
-#### Constructor
-
-```typescript
-new LinearRegression(options?: LinearRegressionOptions)
-```
-
-**Parameters:**
-
-| Parameter | Type | Description | Default |
-|-----------|------|-------------|---------|
-| `options.learningRate` | `number` | Step size for gradient descent | `0.01` |
-| `options.normalize` | `boolean` | Normalize features to [0, 1] | `false` |
-
-**Example:**
-
-```typescript
-const model = new LinearRegression({
-  learningRate: 0.001,
-  normalize: true,
-});
-```
-
-#### Methods
-
-##### `fit(X: number[], y: number[]): FitResult`
-
-Train the model on data.
-
-```typescript
-const X = [1, 2, 3, 4, 5];
-const y = [2.1, 4.0, 5.9, 8.1, 10.2];
-
-const result = model.fit(X, y);
-// → { coefficients: [2.02], intercept: 0.04, r2: 0.9998 }
-```
-
-##### `predict(X: number | number[]): number | number[]`
-
-Make predictions.
-
-```typescript
-// Single prediction
-const single = model.predict(6);
-// → 12.16
-
-// Multiple predictions
-const batch = model.predict([6, 7, 8]);
-// → [12.16, 14.18, 16.20]
-```
-
-##### `evaluate(X: number[], y: number[]): EvaluationMetrics`
-
-Calculate regression metrics.
-
-```typescript
-const metrics = model.evaluate(X_test, y_test);
-// → {
-//     mse: 0.042,        // Mean Squared Error
-//     rmse: 0.205,       // Root MSE
-//     mae: 0.164,        // Mean Absolute Error
-//     r2: 0.9996,        // R-squared
-//     mape: 0.82         // Mean Absolute % Error
-//   }
-```
-
----
-
-### LogisticRegression
-
-Binary and multi-class classification.
-
-#### Constructor
-
-```typescript
-new LogisticRegression(options?: LogisticRegressionOptions)
-```
-
-**Parameters:**
-
-| Parameter | Type | Description | Default |
-|-----------|------|-------------|---------|
-| `options.learningRate` | `number` | Step size for gradient descent | `0.01` |
-| `options.multiClass` | `boolean` | Enable multi-class (softmax) | `false` |
-| `options.threshold` | `number` | Decision boundary | `0.5` |
-
-**Example:**
-
-```typescript
-const classifier = new LogisticRegression({
-  learningRate: 0.1,
-  multiClass: false,
-  threshold: 0.5,
-});
-```
-
-#### Methods
-
-##### `fit(X: number[], y: number[], config?: FitConfig): FitResult`
-
-Train the classifier.
-
-```typescript
-interface FitConfig {
-  learningRate?: number;  // Override constructor rate
-  epochs?: number;        // Training iterations
-  batchSize?: number;     // Mini-batch size
-  verbose?: boolean;      // Log progress
-}
-
-const result = classifier.fit(X, y, {
-  epochs: 500,
-  learningRate: 0.1,
-  verbose: true,
-});
-```
-
-##### `predict(X: number | number[]): PredictionResult`
-
-Classify inputs and get probabilities.
-
-```typescript
-// Single prediction
-const result = classifier.predict(2.5);
-// → {
-//     class: 1,
-//     probability: 0.823,
-//     score: 1.523
-//   }
-
-// Multiple predictions
-const results = classifier.predict([1.5, 2.5, 3.5]);
-// → [{ class: 0, ... }, { class: 1, ... }, { class: 1, ... }]
-```
-
-##### `predictProba(X: number[]): number[]`
-
-Get class probabilities without hard classification.
-
-```typescript
-const probs = classifier.predictProba([2.5]);
-// → [0.177, 0.823]  // P(class=0), P(class=1)
-```
-
-##### `evaluate(X: number[], y: number[]): ClassificationMetrics`
-
-Calculate classification metrics.
-
-```typescript
-const metrics = classifier.evaluate(X_test, y_test);
-// → {
-//     accuracy: 0.94,
-//     precision: 0.91,
-//     recall: 0.96,
-//     f1: 0.935,
-//     confusionMatrix: [[45, 5], [3, 47]],
-//     rocAuc: 0.978
-//   }
+├── Image Processing Fundamentals
+│   ├── Filtering & Convolutions
+│   ├── Edge Detection
+│   └── Image Transformations
+├── Object Detection & Recognition
+│   ├── Haar Cascades
+│   ├── YOLO & RetinaNet
+│   └── Face Recognition Systems
+├── Image Segmentation
+│   ├── Semantic Segmentation
+│   ├── Instance Segmentation
+│   └── Panoptic Segmentation
+├── Advanced Topics
+│   ├── Style Transfer
+│   ├── Image Generation (Stable Diffusion)
+│   ├── Video Understanding
+│   └── 3D Vision
+└── Applications
+    ├── Medical Imaging
+    ├── Autonomous Vehicles
+    └── Augmented Reality
 ```
 
 ---
 
 ## 🏗️ Architecture
 
-### Design Principles
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              AILearner Platform                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─────────────────────────────────────────────────────────────────────┐    │
+│  │                         CLI / Web Interface                          │    │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐              │    │
+│  │  │ Tutorial │  │ Exercise │  │   Quiz   │  │ Progress │              │    │
+│  │  │  Module  │  │  Module  │  │  Module  │  │  Module  │              │    │
+│  │  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘              │    │
+│  └───────┼─────────────┼─────────────┼─────────────┼────────────────────┘    │
+│          │             │             │             │                        │
+│  ┌───────┴─────────────┴─────────────┴─────────────┴────────────────────┐    │
+│  │                         Core Engine                                    │    │
+│  │  ┌────────────────────────────────────────────────────────────────┐  │    │
+│  │  │                      Course Manager                              │  │    │
+│  │  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐           │  │    │
+│  │  │  │ Course  │  │ Lesson  │  │ Exercise│  │  Quiz   │           │  │    │
+│  │  │  │ Loader  │  │ Scheduler│ │ Grader  │  │ Generator│           │  │    │
+│  │  │  └─────────┘  └─────────┘  └─────────┘  └─────────┘           │  │    │
+│  │  └────────────────────────────────────────────────────────────────┘  │    │
+│  │  ┌────────────────────────────────────────────────────────────────┐  │    │
+│  │  │                    User Profile Manager                         │  │    │
+│  │  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐           │  │    │
+│  │  │  │ Progress│  │  Stats  │  │ Achieves│  │ Streaks │           │  │    │
+│  │  │  │ Tracker │  │ Analyzer│  │ Manager │  │  System │           │  │    │
+│  │  │  └─────────┘  └─────────┘  └─────────┘  └─────────┘           │  │    │
+│  │  └────────────────────────────────────────────────────────────────┘  │    │
+│  └───────────────────────────────────────────────────────────────────────┘    │
+│                                     │                                        │
+│  ┌─────────────────────────────────┴─────────────────────────────────────┐    │
+│  │                         Data Layer                                     │    │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                 │    │
+│  │  │ Course JSON  │  │  User Data   │  │   Cache      │                 │    │
+│  │  │   Storage    │  │   (SQLite)   │  │  (JSON/CSV)  │                 │    │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘                 │    │
+│  └───────────────────────────────────────────────────────────────────────┘    │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
-1. **Simplicity First** — Every line of code should be readable and understandable
-2. **No Magic** — Explicit is better than implicit
-3. **Testability** — Every component is unit testable in isolation
-4. **Performance** — Efficient implementations without unnecessary abstraction
-
-### Project Structure
+### Component Diagram
 
 ```
-AILearner/
-├── src/
-│   ├── index.ts          # Main exports
-│   ├── neural-network/   # Neural network implementation
-│   │   ├── layers.ts     # Layer types and operations
-│   │   ├── activations.ts # Activation functions
-│   │   ├── optimizer.ts  # Gradient descent variants
-│   │   └── loss.ts       # Loss functions
-│   ├── regression/
-│   │   ├── linear.ts     # Linear regression
-│   │   └── logistic.ts   # Logistic regression
-│   └── utils/
-│       ├── matrix.ts     # Matrix operations
-│       └── normalizer.ts # Data normalization
-├── tests/                # Unit tests
-├── dist/                 # Compiled output
-├── package.json
-└── README.md
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                           Component Interactions                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+     User Input
+         │
+         ▼
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   CLI Parser    │────▶│   Command       │────▶│   Action        │
+│                 │     │   Router        │     │   Dispatcher    │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+                                                        │
+                        ┌───────────────────────────────┼───────────────────────────────┐
+                        │                               │                               │
+                        ▼                               ▼                               ▼
+              ┌─────────────────┐             ┌─────────────────┐             ┌─────────────────┐
+              │   Tutorial      │             │   Exercise      │             │   Quiz          │
+              │   Controller    │             │   Controller    │             │   Controller    │
+              └─────────────────┘             └─────────────────┘             └─────────────────┘
+                        │                               │                               │
+                        └───────────────────────────────┼───────────────────────────────┘
+                                                        │
+                                                        ▼
+                                              ┌─────────────────┐
+                                              │   Progress     │
+                                              │   Manager      │
+                                              └─────────────────┘
+                                                        │
+                        ┌───────────────────────────────┼───────────────────────────────┐
+                        │                               │                               │
+                        ▼                               ▼                               ▼
+              ┌─────────────────┐             ┌─────────────────┐             ┌─────────────────┐
+              │   User DB       │             │   Analytics     │             │   Achievements  │
+              │   (SQLite)      │             │   Engine        │             │   Manager       │
+              └─────────────────┘             └─────────────────┘             └─────────────────┘
 ```
 
-### Core Algorithms
-
-#### Forward Propagation (Neural Network)
+### Data Flow
 
 ```
-Input Layer → Hidden Layers → Output Layer
-    ↓              ↓              ↓
-  [x₁, x₂] → [Σ(w·x)+b] → [σ(Σ)] → Output
-              ↓
-         Activation
-```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              Data Flow Diagram                              │
+└─────────────────────────────────────────────────────────────────────────────┘
 
-#### Gradient Descent
-
-```
-1. Calculate prediction: ŷ = f(X, θ)
-2. Compute loss: L = loss(y, ŷ)
-3. Compute gradients: ∂L/∂θ
-4. Update weights: θ = θ - α · ∂L/∂θ
-5. Repeat until convergence
+┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐
+│  Course  │────▶│  Course  │────▶│  Lesson  │────▶│  User    │────▶│  Result  │
+│  Source  │     │  Loader  │     │  State   │     │  Action  │     │  Storage │
+│ (JSON)   │     │          │     │ Manager  │     │          │     │          │
+└──────────┘     └──────────┘     └──────────┘     └──────────┘     └──────────┘
+     │                                                   │
+     │                                                   ▼
+     │                                          ┌─────────────────┐
+     │                                          │   Feedback      │
+     │                                          │   Generator     │
+     │                                          └─────────────────┘
+     │                                                  │
+     ▼                                                  ▼
+┌──────────┐                                    ┌─────────────────┐
+│  Cache   │◀───────────────────────────────────│   Display       │
+│  Layer   │                                    │   (Terminal/CLI)│
+└──────────┘                                    └─────────────────┘
 ```
 
 ---
 
-## 🤝 Contributing
+## 📦 Installation
 
-Contributions are welcome! Please read these guidelines before submitting.
+### Prerequisites
+
+| Requirement | Minimum | Recommended |
+|------------|---------|-------------|
+| Python | 3.8+ | 3.11+ |
+| RAM | 4 GB | 8 GB |
+| Disk Space | 500 MB | 2 GB |
+| OS | macOS 10.14+, Ubuntu 18.04+, Windows 10+ | Latest stable |
+
+### Quick Install
+
+```bash
+# Clone the repository
+git clone https://github.com/moggan1337/AILearner.git
+cd AILearner
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Verify installation
+python -m ailearner verify
+
+# Start learning!
+python -m ailearner start
+```
+
+### Detailed Installation Steps
+
+#### 1. Clone Repository
+
+```bash
+git clone https://github.com/moggan1337/AILearner.git
+cd AILearner
+```
+
+#### 2. Create Virtual Environment (Recommended)
+
+```bash
+# Using venv
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+# or
+.\venv\Scripts\activate   # Windows
+
+# Using conda
+conda create -n ailearner python=3.11
+conda activate ailearner
+```
+
+#### 3. Install Dependencies
+
+```bash
+# Install core dependencies
+pip install -r requirements.txt
+
+# Install optional ML libraries (for exercises)
+pip install scikit-learn tensorflow pytorch
+
+# Install for development
+pip install -r requirements-dev.txt
+```
+
+#### 4. Environment Configuration
+
+```bash
+# Copy example config
+cp config/example.env config/.env
+
+# Edit configuration (optional - defaults work for most users)
+nano config/.env
+```
+
+#### 5. Initialize Database
+
+```bash
+# Create user database
+python -m ailearner init-db
+
+# Download initial course data
+python -m ailearner courses sync
+```
+
+### Docker Installation
+
+```bash
+# Build Docker image
+docker build -t ailearner:latest .
+
+# Run with Docker
+docker run -it --rm \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/config:/app/config \
+  ailearner:latest
+```
+
+### Docker Compose
+
+```yaml
+# docker-compose.yml
+version: '3.8'
+services:
+  ailearner:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    environment:
+      - AILEARNER_MODE=interactive
+      - AILEARNER_THEME=dark
+    tty: true
+```
+
+---
+
+## 🚀 Usage
 
 ### Getting Started
 
 ```bash
-# Fork and clone the repository
-git clone https://github.com/danielaideborn/AILearner.git
-cd AILearner
+# Launch interactive mode
+python -m ailearner
 
-# Install dependencies
-npm install
-
-# Run tests
-npm test
-
-# Build
-npm run build
+# Or use the CLI directly
+ailearner --help
 ```
 
-### Development Workflow
+### Course Management
 
-1. **Fork** the repository
-2. **Create a feature branch**: `git checkout -b feature/amazing-algorithm`
-3. **Make your changes** and add tests
-4. **Ensure tests pass**: `npm test`
-5. **Commit** your changes with clear messages
-6. **Push** to your fork
-7. **Open a Pull Request**
+#### List Available Courses
 
-### Code Style
+```bash
+ailearner courses list
+```
 
-- Use TypeScript for all new code
-- Follow existing naming conventions
-- Add JSDoc comments for public APIs
-- Include unit tests for new features
+Output:
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      Available Courses                          │
+├─────────────────────────────────────────────────────────────────┤
+│  ID      │ Name                     │ Topics    │ Difficulty  │
+├─────────────────────────────────────────────────────────────────┤
+│  ml-101  │ Machine Learning Basics  │ ML         │ Beginner    │
+│  ml-201  │ Advanced ML Techniques   │ ML         │ Intermediate│
+│  dl-101  │ Deep Learning Intro      │ DL         │ Beginner    │
+│  dl-201  │ CNNs & Computer Vision    │ DL, CV     │ Intermediate│
+│  nlp-101 │ NLP Fundamentals         │ NLP        │ Beginner    │
+│  nlp-201 │ Transformers & LLMs       │ NLP, DL    │ Advanced    │
+│  cv-101  │ Computer Vision Basics    │ CV         │ Beginner    │
+│  cv-201  │ Advanced Object Detection │ CV, DL     │ Advanced    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Start a Course
+
+```bash
+# Start with course ID
+ailearner start ml-101
+
+# Start with course name
+ailearner start "Machine Learning Basics"
+
+# Start with topic filter
+ailearner start --topic ml
+
+# Start with difficulty filter
+ailearner start --difficulty beginner
+```
+
+### Tutorial Mode
+
+```bash
+# Enter interactive tutorial
+ailearner tutorial ml-101 lesson-1
+
+# View lesson outline
+ailearner tutorial ml-101 outline
+
+# Jump to specific section
+ailearner tutorial ml-101 lesson-3 section-2
+```
+
+**Example Tutorial Session:**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  Lesson 1: Introduction to Machine Learning                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  Welcome to Machine Learning Basics!                            │
+│                                                                  │
+│  In this lesson, you'll learn:                                  │
+│  • What is Machine Learning?                                     │
+│  • Types of ML: Supervised, Unsupervised, Reinforcement         │
+│  • Real-world applications                                       │
+│  • Setting up your ML environment                                │
+│                                                                  │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                                  │
+│  [1] Start Lesson                                                │
+│  [2] View Prerequisites                                          │
+│  [3] Skip to Quiz                                                │
+│  [4] Exit                                                         │
+│                                                                  │
+│  > Choose an option: 1                                           │
+│                                                                  │
+│  ──────────────────────────────────────────────────────────────  │
+│                                                                  │
+│  📖 Section 1.1: What is Machine Learning?                       │
+│                                                                  │
+│  Machine Learning (ML) is a subset of artificial intelligence   │
+│  that enables systems to learn and improve from experience      │
+│  without being explicitly programmed.                            │
+│                                                                  │
+│  Key Components:                                                │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │  📊 Data → Features → Model → Predictions → Evaluation    │  │
+│  └────────────────────────────────────────────────────────────┘  │
+│                                                                  │
+│  [Space] Next  │  [B] Previous  │  [Q] Quit  │  [H] Help        │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Exercise Mode
+
+```bash
+# Start exercise session
+ailearner exercise ml-101
+
+# Specific exercise
+ailearner exercise ml-101 ex-1.3
+
+# View exercise hints
+ailearner exercise ml-101 ex-1.3 --show-hints
+
+# Submit solution
+ailearner exercise ml-101 ex-1.3 submit solution.py
+
+# View solution after attempt
+ailearner exercise ml-101 ex-1.3 --view-solution
+```
+
+**Example Exercise:**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  Exercise 1.3: Linear Regression Implementation                  │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  Task: Implement the predict() function for linear regression   │
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │ # Your Task: Implement the prediction function          │    │
+│  │                                                           │    │
+│  │ def predict(X, weights, bias):                           │    │
+│  │     """                                                 │    │
+│  │     Predict using linear regression                      │    │
+│  │     X: numpy array of shape (n_samples, n_features)     │    │
+│  │     weights: numpy array of shape (n_features,)         │    │
+│  │     bias: float                                          │    │
+│  │     Returns: numpy array of predictions                 │    │
+│  │     """                                                  │    │
+│  │     # TODO: Implement this function                      │    │
+│  │     pass                                                 │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                                                                  │
+│  Hints (3 available):                                           │
+│  [1] Hint 1: Linear regression formula is y = wx + b            │
+│  [2] Hint 2: Use numpy.dot() for matrix multiplication          │
+│  [3] Hint 3: Add bias after the dot product                    │
+│                                                                  │
+│  Commands: [submit] [hint] [skip] [solution] [quit]            │
+│  > _                                                            │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Quiz Mode
+
+```bash
+# Start quiz for a course
+ailearner quiz ml-101
+
+# Specific quiz
+ailearner quiz ml-101 quiz-2
+
+# Quiz with time limit
+ailearner quiz ml-101 --time-limit 30
+
+# Review previous quiz
+ailearner quiz ml-101 review quiz-1
+
+# Adaptive quiz (AI adjusts difficulty)
+ailearner quiz ml-101 --adaptive
+```
+
+**Example Quiz Session:**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  Quiz 2: Supervised Learning                                     │
+├─────────────────────────────────────────────────────────────────┤
+│  Question 3 of 10  │  Score: 40/60  │  Time: 12:34              │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  Which algorithm is most appropriate for predicting house       │
+│  prices based on historical data?                               │
+│                                                                  │
+│  A) K-Means Clustering                                          │
+│  B) Linear Regression                                           │
+│  C) Principal Component Analysis                                │
+│  D) Apriori Algorithm                                           │
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │ [A] K-Means Clustering                                   │    │
+│  │ [B] Linear Regression ← Your Answer                     │    │
+│  │ [C] Principal Component Analysis                        │    │
+│  │ [D] Apriori Algorithm                                    │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                                                                  │
+│  Difficulty: ★★☆☆☆  │  Topic: Supervised Learning             │
+│                                                                  │
+│  Commands: [A] [B] [C] [D] [skip] [flag] [quit]               │
+│  > _                                                            │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Progress Tracking
+
+```bash
+# View overall progress
+ailearner progress
+
+# View progress for specific course
+ailearner progress ml-101
+
+# View detailed analytics
+ailearner progress --analytics
+
+# Export progress report
+ailearner progress --export report.pdf
+
+# View achievements
+ailearner achievements
+
+# Check streak
+ailearner streak
+```
+
+**Example Progress View:**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     Your Learning Progress                       │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │  ████████████████░░░░░░░░░░░░░░  42% Complete           │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                                                                  │
+│  Courses Enrolled:    4/8                                        │
+│  Lessons Completed:   15/36                                      │
+│  Exercises Solved:    28/45                                      │
+│  Quizzes Passed:       6/12                                       │
+│  Total Learning Time:  12h 34m                                   │
+│                                                                  │
+│  ─────────────────────────────────────────────────────────────  │
+│                                                                  │
+│  Skill Radar:                                                         │
+│                                                                  │
+│       ML                                                              │
+│      ╱  ╲       Machine Learning     ████████░░  80%             │
+│     ╱    ╲      Deep Learning        ██████░░░░  60%             │
+│    NLP────CV    NLP                  ████░░░░░░  40%             │
+│                  Computer Vision      █████░░░░░  50%             │
+│                                                                  │
+│  ─────────────────────────────────────────────────────────────  │
+│                                                                  │
+│  🔥 Current Streak: 7 days                                       │
+│  ⭐ Total Points: 1,250                                          │
+│  🏆 Achievements: 12/25                                          │
+│                                                                  │
+│  Recent Activity:                                                  │
+│  • Completed "Neural Network Basics" - 2 hours ago              │
+│  • Solved 5 exercises in ML-101 - Yesterday                     │
+│  • Passed Quiz 1 with 85% - 2 days ago                          │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📚 Course Structure
+
+AILearner organizes content hierarchically:
+
+```
+courses/
+├── {domain}/
+│   ├── course.yaml           # Course metadata
+│   ├── syllabus.json         # Course structure
+│   └── lessons/
+│       ├── lesson-001/
+│       │   ├── content.md    # Lesson content
+│       │   ├── examples/
+│       │   │   └── *.py      # Code examples
+│       │   └── resources/
+│       │       └── *.json    # Additional resources
+│       └── lesson-002/
+│           └── ...
+├── exercises/
+│   └── {domain}/
+│       ├── exercise-001.yaml
+│       └── ...
+└── quizzes/
+    └── {domain}/
+        ├── quiz-001.yaml
+        └── ...
+```
+
+### Course YAML Format
+
+```yaml
+# course.yaml
+id: ml-101
+name: "Machine Learning Fundamentals"
+domain: ml
+version: "1.0.0"
+difficulty: beginner
+duration: "8 hours"
+prerequisites: []
+description: |
+  Master the fundamentals of machine learning from scratch.
+  Learn supervised and unsupervised learning techniques.
+
+learning_objectives:
+  - Understand core ML concepts and terminology
+  - Implement basic ML algorithms from scratch
+  - Evaluate model performance using appropriate metrics
+  - Apply ML to real-world datasets
+
+outline:
+  - lesson: lesson-001
+    title: "Introduction to ML"
+    duration: "45 min"
+  - lesson: lesson-002
+    title: "Linear Regression"
+    duration: "1.5 hours"
+  - lesson: lesson-003
+    title: "Classification Algorithms"
+    duration: "2 hours"
+```
+
+### Lesson Content Format
+
+```markdown
+# Lesson 001: Introduction to Machine Learning
+
+## Learning Objectives
+- Define machine learning and its applications
+- Distinguish between ML, AI, and traditional programming
+- Identify types of machine learning
+
+## Content
+
+### What is Machine Learning?
+Machine learning is...
+
+### Types of Machine Learning
+1. Supervised Learning
+2. Unsupervised Learning
+3. Reinforcement Learning
+
+## Exercises
+- [Exercise 1.1](exercises/ex-1.1.md): Identify ML types
+- [Exercise 1.2](exercises/ex-1.2.md): ML workflow
+
+## Quiz
+- [Quiz 1](quizzes/quiz-1.md): ML Fundamentals
+
+## Resources
+- Additional reading materials
+- External links
+```
+
+---
+
+## 🔧 Configuration
+
+### Configuration File
+
+AILearner uses `config/settings.json` for customization:
+
+```json
+{
+  "general": {
+    "language": "en",
+    "theme": "dark",
+    "editor": "vim",
+    "verbose": true
+  },
+  "courses": {
+    "data_dir": "./data/courses",
+    "cache_enabled": true,
+    "cache_ttl": 3600,
+    "sync_on_start": true
+  },
+  "user": {
+    "db_path": "./data/user.db",
+    "auto_save": true,
+    "backup_enabled": true,
+    "backup_interval": 86400
+  },
+  "quiz": {
+    "adaptive_difficulty": true,
+    "default_time_limit": 1800,
+    "passing_score": 70,
+    "shuffle_questions": true,
+    "show_explanations": true
+  },
+  "exercises": {
+    "auto_test": true,
+    "max_hint_usage": 3,
+    "timeout": 30,
+    "test_framework": "pytest"
+  },
+  "progress": {
+    "track_time": true,
+    "sync_to_cloud": false,
+    "export_format": "pdf"
+  },
+  "display": {
+    "colors": true,
+    "animations": true,
+    "columns": 80,
+    "pager": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "./data/ailearner.log",
+    "rotation": "daily"
+  }
+}
+```
+
+### Environment Variables
+
+Override settings using environment variables:
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `AILEARNER_HOME` | Config directory | `~/.ailearner` |
+| `AILEARNER_DATA_DIR` | Data storage | `$AILEARNER_HOME/data` |
+| `AILEARNER_LOG_LEVEL` | Logging level | `INFO` |
+| `AILEARNER_THEME` | UI theme | `dark` |
+| `AILEARNER_NO_COLOR` | Disable colors | `false` |
+
+### Command-Line Options
+
+```
+ailearner [command] [options]
+
+Commands:
+  start              Start a course or lesson
+  tutorial           Enter tutorial mode
+  exercise           Work on exercises
+  quiz               Take a quiz
+  progress           View progress and stats
+  courses            Manage courses
+
+Global Options:
+  --config FILE      Use custom config file
+  --no-color         Disable colored output
+  --quiet, -q        Minimal output
+  --verbose, -v      Detailed output
+  --version          Show version
+  --help, -h         Show this help
+
+Course Commands:
+  ailearner courses list         List all courses
+  ailearner courses sync         Sync course data
+  ailearner courses install ID    Install specific course
+
+Tutorial Commands:
+  ailearner tutorial COURSE show outline
+  ailearner tutorial COURSE lesson NUM [section]
+  ailearner tutorial COURSE next
+  ailearner tutorial COURSE previous
+
+Exercise Commands:
+  ailearner exercise COURSE [EX_NUM] --submit FILE
+  ailearner exercise COURSE [EX_NUM] --hint
+  ailearner exercise COURSE [EX_NUM] --solution
+
+Quiz Commands:
+  ailearner quiz COURSE [QUIZ_NUM] --time-limit SEC
+  ailearner quiz COURSE review QUIZ_NUM
+  ailearner quiz COURSE adaptive
+
+Progress Commands:
+  ailearner progress [COURSE]
+  ailearner progress --analytics
+  ailearner progress --export FORMAT
+  ailearner achievements
+  ailearner streak
+```
+
+---
+
+## 📖 API Reference
+
+### Core Classes
+
+#### `CourseManager`
+
+Manages course loading and lifecycle.
+
+```python
+from ailearner.core import CourseManager
+
+# Initialize
+manager = CourseManager(data_dir="./data/courses")
+
+# List available courses
+courses = manager.list_courses()
+for course in courses:
+    print(f"{course.id}: {course.name}")
+
+# Load a course
+course = manager.load_course("ml-101")
+
+# Get course outline
+outline = course.get_outline()
+for lesson in outline:
+    print(f"  {lesson.id}: {lesson.title}")
+```
+
+**Methods:**
+
+| Method | Description | Returns |
+|--------|-------------|---------|
+| `list_courses()` | Get all available courses | `List[Course]` |
+| `load_course(id)` | Load course by ID | `Course` |
+| `search_courses(query)` | Search courses | `List[Course]` |
+| `sync_courses()` | Sync with remote | `None` |
+| `get_course_progress(id)` | Get completion status | `Progress` |
+
+#### `LessonEngine`
+
+Handles lesson presentation and navigation.
+
+```python
+from ailearner.core import LessonEngine
+
+# Create engine
+engine = LessonEngine(course)
+
+# Start lesson
+engine.start("lesson-001")
+
+# Navigate
+engine.next()      # Next section
+engine.previous()  # Previous section
+engine.goto(2)     # Jump to section 2
+
+# Get current state
+state = engine.get_state()
+print(f"Section: {state.current_section}")
+print(f"Progress: {state.progress}%")
+```
+
+**Methods:**
+
+| Method | Description | Returns |
+|--------|-------------|---------|
+| `start(lesson_id)` | Begin lesson | `LessonState` |
+| `next()` | Next section | `Section` |
+| `previous()` | Previous section | `Section` |
+| `goto(section_id)` | Jump to section | `Section` |
+| `get_state()` | Current state | `LessonState` |
+| `complete()` | Mark complete | `None` |
+
+#### `ExerciseGrader`
+
+Evaluates user submissions.
+
+```python
+from ailearner.core import ExerciseGrader
+
+# Initialize grader
+grader = ExerciseGrader()
+
+# Load exercise
+exercise = grader.load("ml-101", "ex-1.3")
+
+# Submit solution
+result = grader.submit(exercise, solution_code)
+
+# Get feedback
+print(f"Score: {result.score}")
+print(f"Tests Passed: {result.passed}/{result.total}")
+for failure in result.failures:
+    print(f"  ✗ {failure.test}: {failure.message}")
+```
+
+**Methods:**
+
+| Method | Description | Returns |
+|--------|-------------|---------|
+| `load(course_id, ex_id)` | Load exercise | `Exercise` |
+| `submit(exercise, code)` | Grade submission | `GradingResult` |
+| `get_hints(exercise)` | Get hints | `List[str]` |
+| `get_solution(exercise)` | Get solution | `str` |
+| `run_tests(exercise, code)` | Run tests | `TestResult` |
+
+#### `QuizEngine`
+
+Manages quiz administration.
+
+```python
+from ailearner.core import QuizEngine
+
+# Create quiz
+quiz_engine = QuizEngine()
+
+# Start quiz
+quiz = quiz_engine.start("ml-101", quiz_id="quiz-2")
+
+# Answer question
+result = quiz_engine.answer(quiz.id, question_id="q3", answer="B")
+
+# Navigation
+quiz_engine.flag(quiz.id, question_id="q2")
+quiz_engine.skip(quiz.id)
+quiz_engine.next(quiz.id)
+
+# Complete quiz
+final_result = quiz_engine.complete(quiz.id)
+
+print(f"Score: {final_result.score}%")
+print(f"Time: {final_result.time_taken}")
+```
+
+**Methods:**
+
+| Method | Description | Returns |
+|--------|-------------|---------|
+| `start(course_id, quiz_id)` | Start quiz | `Quiz` |
+| `answer(quiz_id, q_id, answer)` | Submit answer | `AnswerResult` |
+| `skip(quiz_id)` | Skip question | `None` |
+| `flag(quiz_id, q_id)` | Flag for review | `None` |
+| `complete(quiz_id)` | Finish quiz | `QuizResult` |
+| `review(quiz_id)` | Review answers | `QuizReview` |
+
+#### `ProgressTracker`
+
+Tracks and analyzes learning progress.
+
+```python
+from ailearner.core import ProgressTracker
+
+# Initialize tracker
+tracker = ProgressTracker(db_path="./data/user.db")
+
+# Record activity
+tracker.record_lesson_complete("ml-101", "lesson-001")
+tracker.record_exercise_score("ml-101", "ex-1.3", 85)
+tracker.record_quiz_score("ml-101", "quiz-1", 90)
+
+# Get progress
+progress = tracker.get_course_progress("ml-101")
+print(f"Completion: {progress.percentage}%")
+
+# Get analytics
+analytics = tracker.get_analytics(period="30d")
+print(f"Time spent: {analytics.total_time}")
+print(f"Topics mastered: {analytics.mastered_topics}")
+```
+
+**Methods:**
+
+| Method | Description | Returns |
+|--------|-------------|---------|
+| `record_lesson_complete(...)` | Log lesson | `None` |
+| `record_exercise_score(...)` | Log exercise | `None` |
+| `record_quiz_score(...)` | Log quiz | `None` |
+| `get_course_progress(course_id)` | Get progress | `CourseProgress` |
+| `get_overall_progress()` | Get all progress | `OverallProgress` |
+| `get_analytics(period)` | Get stats | `Analytics` |
+| `get_streak()` | Get streak | `int` |
+| `get_achievements()` | Get badges | `List[Achievement]` |
+
+### Data Classes
+
+```python
+@dataclass
+class Course:
+    id: str
+    name: str
+    domain: str
+    difficulty: str
+    version: str
+    description: str
+    duration: str
+    lessons: List[LessonSummary]
+
+@dataclass
+class Lesson:
+    id: str
+    title: str
+    content: str
+    examples: List[CodeExample]
+    exercises: List[str]
+    resources: List[Resource]
+
+@dataclass
+class Exercise:
+    id: str
+    title: str
+    description: str
+    starter_code: str
+    solution_code: str
+    hints: List[str]
+    tests: List[TestCase]
+
+@dataclass
+class Question:
+    id: str
+    text: str
+    options: List[str]
+    correct_answer: str
+    explanation: str
+    difficulty: int
+    topic: str
+
+@dataclass
+class QuizResult:
+    quiz_id: str
+    score: float
+    total_questions: int
+    correct_answers: int
+    time_taken: int
+    answers: List[AnswerRecord]
+```
+
+---
+
+## 🔍 Troubleshooting
+
+### Common Issues
+
+#### Installation Problems
+
+**Issue: `pip install` fails with dependency conflict**
+
+```bash
+# Solution: Use virtual environment
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+**Issue: `ModuleNotFoundError: No module named 'ailearner'`**
+
+```bash
+# Solution: Install in development mode
+pip install -e .
+# or
+python -m pip install -e ~/moggan1337/AILearner
+```
+
+**Issue: Permission denied errors**
+
+```bash
+# Solution: Check permissions
+ls -la ~/moggan1337/AILearner/
+# Fix ownership if needed
+sudo chown -R $USER ~/moggan1337/AILearner
+```
+
+#### Runtime Issues
+
+**Issue: Database locked or corrupted**
+
+```bash
+# Solution: Reset database
+rm -f data/user.db
+python -m ailearner init-db
+```
+
+**Issue: Unicode errors in terminal**
+
+```bash
+# Solution: Set locale
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+```
+
+**Issue: Quiz/exercise not loading**
+
+```bash
+# Solution: Clear cache and resync
+rm -rf data/cache/*
+python -m ailearner courses sync
+```
+
+#### Performance Issues
+
+**Issue: Slow startup**
+
+```bash
+# Solution: Disable sync on start in config
+# Edit config/settings.json
+{
+  "courses": {
+    "sync_on_start": false
+  }
+}
+```
+
+**Issue: High memory usage**
+
+```bash
+# Solution: Disable animations and reduce history
+export AILEARNER_ANIMATIONS=false
+# Edit config/settings.json
+{
+  "display": {
+    "animations": false,
+    "history_lines": 100
+  }
+}
+```
+
+### Debug Mode
+
+Enable verbose logging for troubleshooting:
+
+```bash
+# Set log level
+export AILEARNER_LOG_LEVEL=DEBUG
+
+# Run with debug output
+python -m ailearner --verbose start ml-101
+
+# View log file
+tail -f data/ailearner.log
+```
+
+### Reset Everything
+
+```bash
+# Full reset (WARNING: deletes all progress)
+rm -rf data/*
+python -m ailearner init-db
+python -m ailearner courses sync
+```
+
+### Getting Help
+
+```bash
+# Show diagnostic info
+python -m ailearner doctor
+
+# Check version
+python -m ailearner --version
+
+# View help
+python -m ailearner --help
+python -m ailearner [command] --help
+```
+
+### Error Messages
+
+| Error Code | Description | Solution |
+|------------|-------------|----------|
+| `E001` | Course not found | Run `ailearner courses sync` |
+| `E002` | Database error | Reset database |
+| `E003` | Invalid config | Restore defaults |
+| `E004` | Network error | Check internet connection |
+| `E005` | File permission | Check file permissions |
 
 ---
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE) for details.
-
----
+MIT License - see [LICENSE](LICENSE) for details.
 
 ## 🙏 Acknowledgments
 
-- Inspired by the "Make Your Own Neural Network" approach
-- Built with ❤️ for the ML learning community
+- Scikit-learn team for ML foundations
+- TensorFlow/PyTorch communities
+- Fast.ai for educational inspiration
+- All contributors and beta testers
 
 ---
 
 <p align="center">
-  <strong>⭐ Star this repo if you find it useful!</strong>
+  Built with ❤️ by <a href="https://github.com/moggan1337">moggan1337</a>
 </p>
