@@ -1,4 +1,24 @@
 # AILearner - Interactive AI Learning Platform
+## 🎬 Demo
+![AILearner Demo](demo.gif)
+
+*Interactive learning session with real-time feedback*
+
+## Screenshots
+| Component | Preview |
+|-----------|---------|
+| Learning Dashboard | ![dashboard](screenshots/dashboard.png) |
+| Concept Map | ![map](screenshots/concept-map.png) |
+| Quiz Interface | ![quiz](screenshots/quiz.png) |
+
+## Visual Description
+Dashboard shows personalized learning paths with progress indicators and suggested topics. Concept map visualizes AI concept relationships as an interactive graph. Quiz provides instant feedback with explanations.
+
+---
+
+
+
+[![CI](https://github.com/moggan1337/AILearner/actions/workflows/ci.yml/badge.svg)](https://github.com/moggan1337/AILearner/actions/workflows/ci.yml)
 
 <p align="center">
   <img src="assets/logo.png" alt="AILearner Logo" width="200"/>
